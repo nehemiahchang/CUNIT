@@ -1,7 +1,7 @@
 #include "CUnit/Basic.h"
 #include "CUnit/Console.h"
 #include "CUnit/Automated.h"
-#include "CUnit/CUCurses.h"   /* only on systems having curses */
+//#include "CUnit/CUCurses.h"   /* only on systems having curses */
 
 int init_suite_success(void) { return 0; }
 int init_suite_failure(void) { return -1; }
@@ -10,7 +10,7 @@ int clean_suite_failure(void) { return -1; }
 
 void test_success1(void)
 {
-   CU_ASSERT(TRUE);
+   CU_ASSERT(1);
 }
 
 void test_success2(void)
@@ -30,7 +30,7 @@ void test_success4(void)
 
 void test_failure1(void)
 {
-   CU_ASSERT(FALSE);
+   CU_ASSERT(0);
 }
 
 void test_failure2(void)
@@ -134,11 +134,11 @@ int main()
    CU_list_tests_to_file();
 
    /* Run all tests using the console interface */
-   CU_console_run_tests();
+   //CU_console_run_tests();
 
    /* Run all tests using the curses interface */
    /* (only on systems having curses) */
-   CU_curses_run_tests();
+   //CU_curses_run_tests();
 
    /* Clean up registry and return */
    CU_cleanup_registry();
